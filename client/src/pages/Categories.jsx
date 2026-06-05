@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 const categories = [
-  "Frontend",
-  "Backend",
-  "React",
-  "JavaScript",
-  "MongoDB",
+  "CIS-DF 1",
+  "CIS-DF 2",
+  "CIS-DF 3",
+  "Actual Exam questions CSDM",
+  "Coming Soon...",
 ];
 
 export default function Categories() {

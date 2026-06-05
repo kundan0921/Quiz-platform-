@@ -1,6 +1,7 @@
 export default function QuizSidebar({
   current,
   total,
+  timeLeft,
 }) {
   const progress = ((current + 1) / total) * 100;
 
@@ -36,9 +37,10 @@ export default function QuizSidebar({
           Time Left
         </h1>
 
-        <div className="text-5xl font-bold text-purple-600 mt-6 text-center">
-          08:45
-        </div>
+        <div className="text-6xl font-bold text-purple-600">
+  {Math.floor(timeLeft / 60)}:
+  {(timeLeft % 60).toString().padStart(2, "0")}
+</div>
       </div>
 
       {/* Navigator */}

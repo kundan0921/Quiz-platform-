@@ -22,28 +22,14 @@ export default function Quiz() {
     setTimeLeft((prev) => {
       if (prev <= 1) {
         clearInterval(timer);
-
-        localStorage.setItem(
-          "quizAnswers",
-          JSON.stringify(answers)
-        );
-
-        localStorage.setItem(
-          "quizQuestions",
-          JSON.stringify(questions)
-        );
-
-        window.location.href = "/result";
-
         return 0;
       }
-
       return prev - 1;
     });
   }, 1000);
 
   return () => clearInterval(timer);
-}, [answers, questions]);
+}, []);
 
   const fetchQuestions = async () => {
     try {
@@ -272,9 +258,10 @@ export default function Quiz() {
 
         {/* Sidebar */}
         <QuizSidebar
-          current={current}
-          total={questions.length}
-        />
+  current={current}
+  total={questions.length}
+  timeLeft={timeLeft}
+/>
       </div>
     </div>
   );
